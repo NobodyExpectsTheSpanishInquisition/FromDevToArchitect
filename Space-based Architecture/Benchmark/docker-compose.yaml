@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  single_app:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+      args:
+        - IMAGE_TAG=${PHP_IMAGE_TAG}
+    volumes:
+      - ./1_Single_app:/var/www/html:rw
+    container_name: sba-benchmark-single-app
