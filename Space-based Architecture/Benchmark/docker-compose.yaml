@@ -12,3 +12,12 @@ services:
     volumes:
       - ./1_Single_app:/var/www/html:rw
     container_name: sba-benchmark-single-app
+
+  single_app_db:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+      args:
+        DB_USER
