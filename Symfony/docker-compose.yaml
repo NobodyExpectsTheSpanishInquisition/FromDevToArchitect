@@ -1,0 +1,10 @@
+services:
+  container-configuration-per-environment:
+    build:
+      context: .
+      dockerfile: 1.Dockerfile
+      args:
+        - IMAGE_TAG=8.3.8-fpm-alpine3.20
+    volumes:
+      - ./1-ContainerConfigurationPerEnvironment:/var/www/html
+    container_name: containerConfigurationPerEnvironment

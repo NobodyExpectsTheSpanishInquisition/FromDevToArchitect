@@ -1,0 +1,13 @@
+parameters:
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\:
+    resource: '../../../src/'
+
+  App\Service\ProdService:
+    public: true
+  App\Service\ServiceInterface: '@App\Service\ProdService'
